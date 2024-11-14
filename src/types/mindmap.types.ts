@@ -1,20 +1,37 @@
 import { Node, Edge, NodeProps, EdgeProps } from 'reactflow';
 
+export type NodeData = {
+  title?: string;
+  description?: string;
+  selectedLayout?: "Default" | "Base" | "Ghost";
+};
+
+export type D_Node = Node<NodeData>;
+
 export type MindmapStateType = {
   id: string;
   name: string;
-  nodes: Node[];
+  nodes: D_Node[];
   edges: Edge[];
   customNodeTypes?: Record<string, React.ComponentType<NodeProps>>;
   customEdgeTypes?: Record<string, React.ComponentType<EdgeProps>>;
-  selectedNode?: Node;
+  selectedNode?: D_Node;
   selectedEdge?: Edge;
   settings?: MindmapSettings;
   config?: MindmapConfig;
 };
 
+export type ThemeColors = {
+  [key: string]: string[];
+};
+
+export type ThemeSettings = {
+  selectedColorGroup: string;
+  colors: ThemeColors;
+};
+
 type MindmapSettings = {
-  theme?: {};
+  theme: ThemeSettings;
   background?: 'grid' | 'dots' | 'lines';
   handleSize?: number;
 };

@@ -1,41 +1,17 @@
-import useMindmapStore from "../../store/mindmap.store";
-import BaseHandle from "../handle/BaseHandle";
+import useMindmapStore from "src/store/mindmap.store";
 import { NodeProps } from "reactflow";
+import BaseNode from "./BaseNode";
 
-const RootNode = ({ data, xPos, yPos, id }: NodeProps) => {
+const RootNode = (props: NodeProps) => {
+  const { data } = props;
   const {addNode} = useMindmapStore();
 
   return (
-    <div className="[&>.root-handle]:hover:block">
-      <div className="bg-white rounded-md px-10 py-5 max-w-56 shadow-md">
-        <h1 className="text-4xl font-black text-purple-600 uppercase">{data.title}</h1>
-      </div>
-      <BaseHandle 
-        className="root-handle hidden" 
-        type="source" 
-        position="top" 
-      />
-      <BaseHandle 
-        className="root-handle hidden" 
-        type="source" 
-        position="left" 
-        id="root-left-handle"
-        onClick={() => {
-          console.log('add node');
-          addNode({parentId: id, parentX: xPos, parentY: yPos, createSide: 'left'});
-        }} 
-      />
-      <BaseHandle 
-        className="root-handle hidden" 
-        type="source" 
-        position="right" 
-      />
-      <BaseHandle 
-        className="root-handle hidden" 
-        type="source" 
-        position="bottom" 
-      />
-    </div>
+    <BaseNode 
+      key={data.id} {...props}
+      className="text-4xl font-black bg-blue-500 text-white uppercase">
+      <h1>{data.title}</h1>
+    </BaseNode>
   );
 };
 

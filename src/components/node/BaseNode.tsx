@@ -1,0 +1,43 @@
+import React, { HTMLAttributes, useCallback } from "react";
+import useMindmapStore from "../../store/mindmap.store";
+import { NodeProps } from "reactflow";
+import BaseHandle from "../handle/BaseHandle";
+import { cn } from "src/lib/utils";
+
+type BaseNodeProps = NodeProps & HTMLAttributes<JSX.ElementChildrenAttribute>;
+
+const BaseNode = ({ data, type, xPos, yPos, id, selected, children, className }: BaseNodeProps) => {
+  const {addNode} = useMindmapStore();
+
+  const onSelectNodeClasses = `${selected ? " ring-4 border-transparent shadow-none ring-red-400 ring-offset-2" : ""}`;
+
+  const renderHandles = useCallback(() => {
+    switch(type) {
+      case "rootNode":
+        return <BaseHandle type="source" />;
+      default:
+        return (
+          <>
+            <BaseHandle type="source" />
+            <BaseHandle type="target" />
+          </>
+        );
+    };
+
+  }, []);
+
+  return (
+    <>
+      <div 
+        className={cn(
+          "transform transition-all duration-200 rounded-md px-10 py-5 hover:cursor-pointer shadow-sm shadow-slate-300 max-w-sm",
+          className, onSelectNodeClasses
+        )}>
+        {children}
+      </div>
+      {renderHandles()}
+    </>
+  );
+};
+
+export default BaseNode;

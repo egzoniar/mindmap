@@ -12,7 +12,7 @@ type BaseHandleProps = Omit<HandleProps, "position"> & {
 }
 
 const BaseHandle = ({
-  icon = "plus",
+  icon,
   size,
   position = "top",
   className = "",
@@ -31,7 +31,7 @@ const BaseHandle = ({
 
   const iconMap = useMemo(() => ({
     plus: <PlusIcon size={settings?.handleSize} />,
-  }), [icon]);
+  }), [settings?.handleSize]);
 
   const correctTheHandlePositionOffset = useMemo(() => ({
     left: {left: 0, transform: "translate(-50%, -50%)"},
@@ -43,10 +43,14 @@ const BaseHandle = ({
   const combineStyles = useMemo(() => ({
     ...correctTheHandlePositionOffset[position],
     zIndex: 10,
-  }), []);
+  }), [correctTheHandlePositionOffset, position]);
 
   const defaultClasses = "rounded-full border border-neutral-700";
-  const handleClasses = `${defaultClasses} ${className}`;
+  const noIconClasses = "hidden";
+
+  const classes = icon ? defaultClasses : noIconClasses;
+
+  const handleClasses = `${classes} ${className}`;
 
   return (
     <Handle
@@ -56,7 +60,7 @@ const BaseHandle = ({
       onClick={onClick}
       {...rest}
     >
-      {iconMap[icon]}
+      {icon && iconMap[icon]}
     </Handle>
   );
 }
