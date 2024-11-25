@@ -3,36 +3,47 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { cn } from "src/lib/utils";
 import Toolbar from "./Toolbar";
+import { Separator } from "src/shadcn-components/ui/separator";
 
 type NovelEditorProps = {
-  description: string;
+  content: string;
   onChange: (richText: string) => void;
 };
 
-const NovelEditor: FC<NovelEditorProps> = ({ 
-  description, 
-  onChange
-}) => {
+const NovelEditor: FC<NovelEditorProps> = ({ content, onChange }) => {
   const editor = useEditor({
     extensions: [StarterKit],
-    content: description,
+    content: content,
     editorProps: {
       attributes: {
         class: cn("focus-visible:outline-none p-2"),
       },
     },
-    onUpdate({ editor }) {
+    onUpdate({ editor, ...rest }) {
       onChange(editor.getHTML());
     },
   });
 
   return (
-    <div className={cn(
-      "editor flex flex-col justify-stretch gap-6 border border-gray-300 shadow-sm rounded-md p-2.5",
-      "focus-within:ring-2 focus-within:ring-ring focus-within:border-transparent",
-    )}>
+    <div
+      className={cn(
+        "editor flex flex-col justify-stretch border border-gray-300 shadow-sm rounded-md"
+      )}
+    >
       <Toolbar editor={editor} />
-      <EditorContent editor={editor} />
+      <div className="max-h-96 overflow-scroll">
+        <div className="p-2">
+          <EditorContent
+            editor={editor}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" && event.shiftKey) {
+                // Shift + Enter: Insert a break
+                event.preventDefault();
+              }
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

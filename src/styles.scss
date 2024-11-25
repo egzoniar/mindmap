@@ -59,7 +59,7 @@
 
 
   code {
-    background-color: rgba(#616161, 0.1);
+    background-color: rgba(#616161, 0.2);
     color: rgb(24, 24, 27);
     font-size: 13px;
     font-weight: 600;
@@ -96,6 +96,13 @@
     border: none;
     border-top: 2px solid rgba(#0D0D0D, 0.1);
     margin: 2rem 0;
+  }
+}
+
+.ProseMirror {
+  pre {
+    white-space: revert;
+    overflow-x: scroll;
   }
 }
 

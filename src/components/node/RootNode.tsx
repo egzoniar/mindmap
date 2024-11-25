@@ -3,14 +3,15 @@ import { NodeProps } from "reactflow";
 import BaseNode from "./BaseNode";
 
 const RootNode = (props: NodeProps) => {
-  const { data } = props;
-  const {addNode} = useMindmapStore();
+  const { id, content } = props.data;
 
   return (
-    <BaseNode 
-      key={data.id} {...props}
-      className="text-4xl font-black bg-blue-500 text-white uppercase">
-      <h1>{data.title}</h1>
+    <BaseNode
+      key={id}
+      {...props}
+      className="text-4xl font-black bg-blue-500 text-white uppercase"
+    >
+      <h1>{content.replace(/<\/?[^>]+(>|$)/g, "")}</h1>
     </BaseNode>
   );
 };

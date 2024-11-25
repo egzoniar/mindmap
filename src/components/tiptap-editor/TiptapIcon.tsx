@@ -1,22 +1,45 @@
 import { useCallback } from "react";
 import {
-  Bold, Underline, Italic, Code, Link, Eraser,
-  Pilcrow, Heading1, Heading2, Heading3, Heading4,
-  Heading5, Heading6, List, ListOrdered, Braces,
-  Quote, Minus, WrapText, RotateCw, RotateCcw,
-  ArrowDownToLine, Strikethrough, X, Plus , Superscript, 
-  Subscript, ListChecks, ImagePlus, ArrowDown, CircleAlert,
-  Bird
+  Bold,
+  Underline,
+  Italic,
+  Code,
+  Link,
+  Eraser,
+  Pilcrow,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  List,
+  ListOrdered,
+  Braces,
+  Quote,
+  Minus,
+  WrapText,
+  RotateCw,
+  RotateCcw,
+  ArrowDownToLine,
+  Strikethrough,
+  X,
+  Plus,
+  Superscript,
+  Subscript,
+  ListChecks,
+  ImagePlus,
+  ArrowDown,
+  CircleAlert,
+  Bird,
 } from "lucide-react";
 
 interface IconProps {
   iconName: string;
   iconSize?: number;
-};
+}
 
-const TiptapIcon = ({
-  iconName, iconSize = 20
-}: IconProps) => {
+const TiptapIcon = ({ iconName, iconSize = 15 }: IconProps) => {
   const renderIcon = useCallback(() => {
     return {
       bold: <Bold size={iconSize} />,
@@ -55,6 +78,5 @@ const TiptapIcon = ({
   }, []);
 
   return renderIcon() || <Bold size={iconSize} />;
-  
 };
 export default TiptapIcon;

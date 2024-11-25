@@ -6,7 +6,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "src/shadcn-components/ui/tabs"
+} from "src/shadcn-components/ui/tabs";
 import NodeSettingsContainer from "src/components/node-settings/NodeSettingsContainer";
 import MindmapSettingsContainer from "src/components/mindmap-settings/MindmapSettingsContainer";
 import { Hexagon, GitPullRequest, Settings } from "lucide-react";
@@ -26,11 +26,13 @@ const MindmapControls = () => {
   return (
     <div
       className={cn(
-        "w-[500px] min-w-[300px] h-screen transition-transform duration-200 absolute top-0 right-0 px-6 py-4 shadow-lg bg-white z-50",
+        "w-[500px] min-w-[300px] h-screen transition-transform duration-200 absolute top-0 right-0 px-6 py-4 shadow-lg bg-white z-50 overflow-scroll",
         showControls
       )}
     >
-      <h1 className="font-extralight text-3xl tracking-tight pb-1 border-b text-gray-600">Mindmap Controls</h1>
+      <h1 className="font-extralight text-3xl tracking-tight pb-1 border-b text-gray-600">
+        Mindmap Controls
+      </h1>
       <div className="spacing my-6"></div>
       <div id="sidebar-content" className="h-[calc(100vh-90px)]">
         <Tabs defaultValue="node-settings">
@@ -61,7 +63,9 @@ const MindmapControls = () => {
             </TabsTrigger>
           </TabsList>
           <div className="space my-6"></div>
-          <TabsContent value="node-settings">{useSafeRenderContent()}</TabsContent>
+          <TabsContent value="node-settings">
+            {useSafeRenderContent()}
+          </TabsContent>
           <TabsContent value="edge-settings">
             <div className="flex pl-3 items-center justify-center text-slate-800 gap-1 my-7">
               <GitPullRequest size={26} />

@@ -1,8 +1,7 @@
-import { Node, Edge, NodeProps, EdgeProps } from 'reactflow';
+import { Node, Edge, NodeProps, EdgeProps } from "reactflow";
 
 export type NodeData = {
-  title?: string;
-  description?: string;
+  content?: string;
   selectedLayout?: "Default" | "Base" | "Ghost";
 };
 
@@ -32,7 +31,7 @@ export type ThemeSettings = {
 
 type MindmapSettings = {
   theme: ThemeSettings;
-  background?: 'grid' | 'dots' | 'lines';
+  background?: "grid" | "dots" | "lines";
   handleSize?: number;
 };
 
