@@ -1,11 +1,8 @@
 import { Hexagon } from "lucide-react";
 import LayoutSelectContainer from "./LayoutSelectContainer";
 import NodeSettingsForm from "./NodeSettingsForm";
-import RadioThemeColorsSelector from "../RadioThemeColorsSelector";
-
 
 const NodeSettingsContainer = () => {
-
   return (
     <div>
       <div className="flex pl-3 items-center justify-center text-slate-800 gap-1 my-7">

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { IconButton } from "src/shadcn-components/ui/icon-button";
 import useMindmapStore from "src/store/mindmap.store";
 import TiptapEditor from "src/components/tiptap-editor/TiptapEditor";
@@ -17,7 +17,7 @@ const NodeSettingsForm = () => {
       parentId: selectedNode.id,
       createSide: "right",
     });
-  }, [selectedNode]);
+  }, [selectedNode, addNode]);
 
   return (
     <div>
