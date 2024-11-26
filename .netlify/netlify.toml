@@ -1,27 +1,15 @@
 plugins = []
 headers = []
 redirects = []
-
 [functions]
-
 [functions."*"]
-
 [build]
-publish = "/Users/egzonarifaj/Downloads/MacBook Backup - 04 November 2024/Personal Projects/mindmap/build"
-publishOrigin = "ui"
-commandOrigin = "ui"
+publish = "build"
 command = "npm run build"
-
 [build.environment]
-
 [build.processing]
-
 [build.processing.css]
-
 [build.processing.html]
-
 [build.processing.images]
-
 [build.processing.js]
-
 [build.services]
