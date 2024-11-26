@@ -3,7 +3,6 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { cn } from "src/lib/utils";
 import Toolbar from "./Toolbar";
-import { Separator } from "src/shadcn-components/ui/separator";
 
 type NovelEditorProps = {
   content: string;

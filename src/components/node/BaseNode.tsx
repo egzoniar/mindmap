@@ -16,8 +16,6 @@ const BaseNode = ({
   children,
   className,
 }: BaseNodeProps) => {
-  const { addNode } = useMindmapStore();
-
   const onSelectNodeClasses = `${
     selected
       ? " ring-4 border-transparent shadow-none ring-red-400 ring-offset-2"
@@ -36,7 +34,7 @@ const BaseNode = ({
           </>
         );
     }
-  }, []);
+  }, [type]);
 
   return (
     <>

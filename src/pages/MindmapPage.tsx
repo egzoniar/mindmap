@@ -1,14 +1,19 @@
-import { ReactFlow, Background, MiniMap, BackgroundVariant } from 'reactflow';
-import useMindmapStore from '../store/mindmap.store';
+import { ReactFlow, MiniMap } from "reactflow";
+import useMindmapStore from "../store/mindmap.store";
 
 const MindmapPage = () => {
-  const { mindmap, onNodesChangeHandler, onEdgesChangeHandler, onSelectionChange } = useMindmapStore();
-  const { nodes, edges, selectedNode, customNodeTypes, customEdgeTypes } = mindmap;
+  const {
+    mindmap,
+    onNodesChangeHandler,
+    onEdgesChangeHandler,
+    onSelectionChange,
+  } = useMindmapStore();
+  const { nodes, edges, customNodeTypes, customEdgeTypes } = mindmap;
 
   return (
-    <div style={{height: "100vh "}}>
-      <ReactFlow 
-        nodes={nodes} 
+    <div style={{ height: "100vh " }}>
+      <ReactFlow
+        nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChangeHandler}
         onSelectionChange={onSelectionChange}
@@ -22,7 +27,7 @@ const MindmapPage = () => {
         <MiniMap />
       </ReactFlow>
     </div>
-  )
+  );
 };
 
 export default MindmapPage;

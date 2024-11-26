@@ -60,7 +60,7 @@ const NodeLayoutTypes: FC<NodeLayoutTypesProps> = ({ type = "Default" }) => {
 
   const onClickHandler = useCallback(
     () => editNode({ selectedLayout: type }),
-    [type]
+    [type, editNode]
   );
 
   return (

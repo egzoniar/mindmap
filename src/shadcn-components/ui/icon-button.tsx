@@ -1,12 +1,35 @@
 import { useCallback } from "react";
-import {Button, buttonVariants, ButtonProps} from "./button";
+import { Button, buttonVariants, ButtonProps } from "./button";
 import {
-  Bold, Underline, Italic, Code, Link, Eraser,
-  Pilcrow, Heading1, Heading2, Heading3, Heading4,
-  Heading5, Heading6, List, ListOrdered, Braces,
-  Quote, Minus, WrapText, RotateCw, RotateCcw,
-  ArrowDownToLine, Strikethrough, X, Plus , Superscript, 
-  Subscript, ListChecks, ImagePlus
+  Bold,
+  Underline,
+  Italic,
+  Code,
+  Link,
+  Eraser,
+  Pilcrow,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  List,
+  ListOrdered,
+  Braces,
+  Quote,
+  Minus,
+  WrapText,
+  RotateCw,
+  RotateCcw,
+  ArrowDownToLine,
+  Strikethrough,
+  X,
+  Plus,
+  Superscript,
+  Subscript,
+  ListChecks,
+  ImagePlus,
 } from "lucide-react";
 import { cn } from "src/lib/utils";
 
@@ -14,14 +37,18 @@ interface IconButtonProps extends ButtonProps {
   iconName?: string;
   iconSize?: number;
   iconSide?: "left" | "right";
-};
+}
 
 const IconButton = (props: IconButtonProps) => {
   const {
-    iconName, iconSize = 18, iconSide = "left", 
+    iconName,
+    iconSize = 18,
+    iconSide = "left",
     size = iconName ? "icon" : "auto",
-    variant = 'outline', className, 
-    children, ...rest
+    variant = "outline",
+    className,
+    children,
+    ...rest
   } = props;
 
   const renderIcon = useCallback(() => {
@@ -57,7 +84,7 @@ const IconButton = (props: IconButtonProps) => {
       checklist: <ListChecks size={iconSize} />,
       image: <ImagePlus size={iconSize} />,
     }[iconName];
-  }, []);
+  }, [iconName, iconSize]);
 
   const renderIconSide = useCallback(() => {
     if (iconSide === "right") {
@@ -74,20 +101,25 @@ const IconButton = (props: IconButtonProps) => {
         {children}
       </>
     );
-  }, []);
+  }, [iconSide]);
 
   const render = useCallback(() => {
     if (!iconName) return children;
     return renderIconSide();
-  }, []);
+  }, [iconName]);
 
-  const iconSizeAndSide = size === "icon" ? "w-9 h-9" : iconSide === "right" ? "flex gap-1 pr-2" : "flex gap-1 pl-2";
+  const iconSizeAndSide =
+    size === "icon"
+      ? "w-9 h-9"
+      : iconSide === "right"
+      ? "flex gap-1 pr-2"
+      : "flex gap-1 pl-2";
   const conditional = iconName ? iconSizeAndSide : "";
 
   return (
-    <Button 
-      {...rest} 
-      size={size} 
+    <Button
+      {...rest}
+      size={size}
       className={cn(conditional, className)}
       variant={variant}
     >
@@ -96,4 +128,4 @@ const IconButton = (props: IconButtonProps) => {
   );
 };
 
-export {IconButton, buttonVariants};
+export { IconButton, buttonVariants };

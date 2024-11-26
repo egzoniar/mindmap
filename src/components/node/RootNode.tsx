@@ -1,4 +1,3 @@
-import useMindmapStore from "src/store/mindmap.store";
 import { NodeProps } from "reactflow";
 import BaseNode from "./BaseNode";
 
