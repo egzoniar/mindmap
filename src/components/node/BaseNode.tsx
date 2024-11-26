@@ -1,21 +1,11 @@
-import React, { HTMLAttributes, useCallback } from "react";
-import useMindmapStore from "../../store/mindmap.store";
+import { HTMLAttributes, useCallback } from "react";
 import { NodeProps } from "reactflow";
 import BaseHandle from "../handle/BaseHandle";
 import { cn } from "src/lib/utils";
 
 type BaseNodeProps = NodeProps & HTMLAttributes<JSX.ElementChildrenAttribute>;
 
-const BaseNode = ({
-  data,
-  type,
-  xPos,
-  yPos,
-  id,
-  selected,
-  children,
-  className,
-}: BaseNodeProps) => {
+const BaseNode = ({ type, selected, children, className }: BaseNodeProps) => {
   const onSelectNodeClasses = `${
     selected
       ? " ring-4 border-transparent shadow-none ring-red-400 ring-offset-2"

@@ -75,7 +75,7 @@ const TiptapIcon = ({ iconName, iconSize = 15 }: IconProps) => {
       admonition: <CircleAlert size={iconSize} />,
       sandpack: <Bird size={iconSize} />,
     }[iconName];
-  }, []);
+  }, [iconName, iconSize]);
 
   return renderIcon() || <Bold size={iconSize} />;
 };

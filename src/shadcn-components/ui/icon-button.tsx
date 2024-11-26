@@ -101,12 +101,12 @@ const IconButton = (props: IconButtonProps) => {
         {children}
       </>
     );
-  }, [iconSide]);
+  }, [children, iconSide, renderIcon]);
 
   const render = useCallback(() => {
     if (!iconName) return children;
     return renderIconSide();
-  }, [iconName]);
+  }, [iconName, children, renderIconSide]);
 
   const iconSizeAndSide =
     size === "icon"
