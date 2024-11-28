@@ -8,7 +8,7 @@ type BaseNodeProps = NodeProps & HTMLAttributes<JSX.ElementChildrenAttribute>;
 const BaseNode = ({ type, selected, children, className }: BaseNodeProps) => {
   const onSelectNodeClasses = `${
     selected
-      ? " ring-4 border-transparent shadow-none ring-red-400 ring-offset-2"
+      ? " ring-8 border-transparent shadow-none ring-orange-600 ring-offset-4"
       : ""
   }`;
 

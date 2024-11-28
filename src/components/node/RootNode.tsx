@@ -8,7 +8,7 @@ const RootNode = (props: NodeProps) => {
     <BaseNode
       key={id}
       {...props}
-      className="text-4xl font-black bg-blue-500 text-white uppercase"
+      className="text-4xl font-black bg-orange-600 text-white uppercase"
     >
       <h1>{content.replace(/<\/?[^>]+(>|$)/g, "")}</h1>
     </BaseNode>

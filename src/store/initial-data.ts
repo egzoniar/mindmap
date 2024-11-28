@@ -5,6 +5,7 @@ export const initialNodes: D_Node[] = [
   {
     id: "1",
     type: "rootNode",
+    selected: true,
     data: {
       content: "Hello World",
       selectedLayout: "Base",
