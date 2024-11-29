@@ -23,8 +23,6 @@ const MindmapPage = () => {
     const rootNodeHeight = nodes[0].height ? nodes[0].height / 2 : 0; // height of the root node
 
     return {
-      // x: rootNodeX,
-      // y: rootNodeY,
       x: Math.abs(rootNodeX - viewportWidth / 2) - rootNodeWidth,
       y: Math.abs(rootNodeY - viewportHeight / 2) - rootNodeHeight,
       zoom: 1,
@@ -32,7 +30,7 @@ const MindmapPage = () => {
   }, [nodes]);
 
   return (
-    <div style={{ height: "100vh " }}>
+    <div style={{ height: "100vh" }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -49,7 +47,8 @@ const MindmapPage = () => {
         <Background
           gap={20}
           size={1}
-          color="#212529"
+          color="#000"
+          className="bg-slate-100"
           variant={BackgroundVariant.Dots}
         />
       </ReactFlow>
