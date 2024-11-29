@@ -30,9 +30,12 @@ const MindmapControls = () => {
         showControls
       )}
     >
-      <h1 className="font-extralight text-3xl tracking-tight pb-1 border-b text-gray-600">
-        Mindmap Controls
-      </h1>
+      <div className="flex items-center gap-2 pb-2 border-b border-neutral-300">
+        <img width="40px" src="logo40.png" alt="" />
+        <h1 className="text-4xl font-light tracking-tight text-slate-800">
+          Mindmap Controls
+        </h1>
+      </div>
       <div className="spacing my-6"></div>
       <div id="sidebar-content" className="h-[calc(100vh-90px)]">
         <Tabs defaultValue="node-settings">
