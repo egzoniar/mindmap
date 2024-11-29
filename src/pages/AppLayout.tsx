@@ -1,8 +1,8 @@
 import SidebarContainer from "src/components/map-sidebar/SidebarContainer";
 import MindmapPage from "./MindmapPage";
-import { CustomSidebarProvider } from "./CustomSidebarProvider";
-import { SidebarTrigger } from "src/shadcn-components/ui/sidebar";
-import { AppSidebar } from "./AppSidebar";
+// import { CustomSidebarProvider } from "./CustomSidebarProvider";
+// import { SidebarTrigger } from "src/shadcn-components/ui/sidebar";
+// import { AppSidebar } from "./AppSidebar";
 
 const AppLayout = () => {
   return (
