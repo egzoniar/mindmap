@@ -31,7 +31,7 @@ const MindmapControls = () => {
       )}
     >
       <div className="flex items-center gap-2 pb-2 border-b border-neutral-300">
-        <img width="40px" src="logo40.png" alt="" />
+        <img width="30px" src="2.svg" alt="" />
         <h1 className="text-4xl font-light tracking-tight text-slate-800">
           Mindmap Controls
         </h1>
