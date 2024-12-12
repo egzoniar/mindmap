@@ -1,8 +1,4 @@
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "src/shadcn-components/ui/sidebar";
+import { SidebarProvider } from "src/shadcn-components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 import { ReactNode } from "react";
 

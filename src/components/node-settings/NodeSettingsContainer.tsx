@@ -1,4 +1,3 @@
-import { Hexagon } from "lucide-react";
 import LayoutSelectContainer from "./LayoutSelectContainer";
 import NodeSettingsForm from "./NodeSettingsForm";
 
