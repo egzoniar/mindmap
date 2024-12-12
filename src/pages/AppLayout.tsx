@@ -1,17 +1,15 @@
 import SidebarContainer from "src/components/map-sidebar/SidebarContainer";
 import MindmapPage from "./MindmapPage";
-// import { CustomSidebarProvider } from "./CustomSidebarProvider";
-// import { SidebarTrigger } from "src/shadcn-components/ui/sidebar";
-// import { AppSidebar } from "./AppSidebar";
+import { CustomSidebarProvider } from "src/components/app-sidebar/CustomSidebarProvider";
 
 const AppLayout = () => {
   return (
-    <div className="h-screen">
-      <SidebarContainer />
-      <MindmapPage />
-    </div>
-    // <CustomSidebarProvider>
-    // </CustomSidebarProvider>
+    <CustomSidebarProvider>
+      <div className="w-full h-screen">
+        <SidebarContainer />
+        <MindmapPage />
+      </div>
+    </CustomSidebarProvider>
   );
 };
 

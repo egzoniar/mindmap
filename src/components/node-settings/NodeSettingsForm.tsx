@@ -21,9 +21,6 @@ const NodeSettingsForm = () => {
 
   return (
     <div>
-      <div className="spacing my-4"></div>
-
-      <h4 className="text-md font-base leading-none">Content:</h4>
       <div className="spacing my-2"></div>
       <TiptapEditor
         key={selectedNode?.id}
