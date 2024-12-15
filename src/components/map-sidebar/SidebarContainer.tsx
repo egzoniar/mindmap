@@ -8,8 +8,8 @@ const MindmapControls = () => {
   if (!selectedNode) return null;
 
   return (
-    <div className="w-[500px] min-w-[300px] absolute top-0 right-0 p-2 bg-transparent z-50 overflow-scroll">
-      <div className="bg-white shadow-md px-6 py-4 rounded-lg transition-opacity opacity-[.3] hover:opacity-[1]">
+    <div className="w-[450px] min-w-[300px] absolute top-0 right-0 p-2 bg-transparent z-50 h-screen">
+      <div className="bg-white overflow-scroll h-full shadow-md px-4 py-2 rounded-lg transition-opacity opacity-[.3] hover:opacity-[1]">
         <div id="sidebar-content">
           <NodeSettingsContainer />
         </div>

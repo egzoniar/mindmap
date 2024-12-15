@@ -39,7 +39,7 @@ interface IconProps {
   iconSize?: number;
 }
 
-const TiptapIcon = ({ iconName, iconSize = 15 }: IconProps) => {
+const TiptapIcon = ({ iconName, iconSize = 13 }: IconProps) => {
   const renderIcon = useCallback(() => {
     return {
       bold: <Bold size={iconSize} />,

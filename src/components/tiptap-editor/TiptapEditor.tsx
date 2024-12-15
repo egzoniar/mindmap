@@ -4,6 +4,31 @@ import StarterKit from "@tiptap/starter-kit";
 import { cn } from "src/lib/utils";
 import Toolbar from "./Toolbar";
 
+import Lowlight from "@tiptap/extension-code-block-lowlight";
+import { createLowlight } from "lowlight";
+import javascript from "highlight.js/lib/languages/javascript";
+import html from "highlight.js/lib/languages/xml";
+import css from "highlight.js/lib/languages/css";
+
+// Built-in Highlight.js Themes
+// import "highlight.js/styles/default.css"; // Default
+import "highlight.js/styles/atom-one-dark.css"; // Atom One Dark
+// import "highlight.js/styles/atom-one-light.css"; // Atom One Light
+// import "highlight.js/styles/monokai.css"; // Monokai
+// import 'highlight.js/styles/github.css';           // GitHub
+// import "highlight.js/styles/github-dark.css"; // GitHub Dark
+// import "highlight.js/styles/github-dark-dimmed.css"; // GitHub Dark Dimmed
+// import "highlight.js/styles/nord.css"; // Nord
+// import "highlight.js/styles/vs2015.css"; // VS Code Dark
+// import "highlight.js/styles/vs.css"; // VS Code Light
+// import "highlight.js/styles/an-old-hope.css"; // An Old Hope
+
+// Create a Lowlight instance and register languages
+const lowlight = createLowlight();
+lowlight.register("javascript", javascript);
+lowlight.register("html", html);
+lowlight.register("css", css);
+
 type NovelEditorProps = {
   content: string;
   onChange: (richText: string) => void;
@@ -11,7 +36,12 @@ type NovelEditorProps = {
 
 const NovelEditor: FC<NovelEditorProps> = ({ content, onChange }) => {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Lowlight.configure({
+        lowlight,
+      }),
+    ],
     content: content,
     editorProps: {
       attributes: {

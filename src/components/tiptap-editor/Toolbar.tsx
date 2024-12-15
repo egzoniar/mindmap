@@ -11,7 +11,7 @@ const Toolbar: FC<ToolbarProps> = ({ editor }) => {
   if (!editor) return null;
 
   return (
-    <div className="bg-transparent flex flex-wrap gap-1 border border-transparent border-b-gray-200 p-3 pb-5">
+    <div className="bg-transparent flex flex-wrap border border-transparent border-b-gray-200 p-2 pb-3">
       <Toggle
         pressed={editor.isActive("bold")}
         onClick={() => editor.chain().focus().toggleBold().run()}
