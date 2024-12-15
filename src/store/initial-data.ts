@@ -81,7 +81,7 @@ export const initialNodes: D_Node[] = [
     type: "defaultNode",
     data: {
       content:
-        "<h3>Singleton</h3><p>Ensures that a class has only one instance and<br>provides a global point of access to it.</p><pre><code>class Singleton {\n    constructor() {\n        if (Singleton.instance) return Singleton.instance;\n        Singleton.instance = this;\n    }\n}\nconst instance1 = new Singleton();\nconst instance2 = new Singleton();\nconsole.log(instance1 === instance2); // true\n</code></pre>",
+        "<h3>Singleton</h3><p>Ensures that a class has only one instance and<br>provides a global point of access to it.</p><pre><code>class Singleton {\n  constructor() {\n    if (!this.instance) {\n      this.instance = new Singleton();\n    }\n    return this.instance;\n  }\n}\nconst instance1 = new Singleton();\nconst instance2 = new Singleton();\nconsole.log(instance1 === instance2); // true\n</code></pre>",
       selectedLayout: "Default",
     },
     position: {
